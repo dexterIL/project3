@@ -1,21 +1,18 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
-
 using namespace std;
 #ifndef COMPLEX_H
 #define COMPLEX_H
 
-
 class Complex
 {
 public:
-	
 	Complex operator+(const Complex&) const; // addition
 	Complex operator-(const Complex&) const; // subtraction
 	Complex operator*(const Complex&) const; // multiplication
 	Complex operator/(const Complex&) const; // division
-
+	
 	explicit Complex(double realPart = 0.0 , double imaginaryPart = 0.0 )
 	{
 		real = realPart;
@@ -28,7 +25,6 @@ public:
 		return result;
 	}
 	
-
 	Complex operator+(const Complex& c)
 	{
 		return  Complex{ real + c.real, imaginary + c.imaginary };
@@ -41,10 +37,8 @@ public:
 	{
 		return  Complex{ (real * c.real) - (imaginary * c.imaginary)
 						,(real * c.imaginary) + (imaginary * c.real) };
-
 	}
-
-	//Division
+	
 	Complex operator/(const Complex& c)
 	{
 		Complex denominator = conjugate(c);
@@ -104,10 +98,9 @@ private:
 
 #endif // !COMPLEX_H
 
-
 int main()
 {
-	Complex a(0,1),
+	Complex 	a(0,1),
 			b(2,3),
 			c(-4,5), 
 			d(4),
